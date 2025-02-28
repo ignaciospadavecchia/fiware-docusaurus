@@ -5,6 +5,9 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import 'dotenv/config';
+
+
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -148,4 +151,7 @@ const config = {
     }),
 };
 
-export default config;
+export default config {
+  url: process.env.READTHEDOCS_CANONICAL_URL
+};
+
