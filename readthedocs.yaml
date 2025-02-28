@@ -1,21 +1,19 @@
 version: 2
-
 build:
-  os: ubuntu-24.04
+  os: "ubuntu-22.04"
   tools:
-    nodejs: "22"
+    nodejs: "18"
   jobs:
+    # "docs/" was created following the Docusaurus tutorial:
+    # npx create-docusaurus@latest docs classic
+    # but you can just use your existing Docusaurus site
     install:
-      # "docs/" directory was created using the command to create the site:
-      # npx create-docusaurus@latest docs classic
-      #
-      # Install Docusaurus dependencies
-      - cd docs/ && npm install
+      # Install Docusaurus dependencies in the root directory
+      - npm install
     build:
       html:
-        # Build the site
-        - cd docs/ && npm run build
-    post_build:
-      # Copy generated files into Read the Docs directory
-      - mkdir --parents $READTHEDOCS_OUTPUT/html/
-      - cp --recursive docs/build/* $READTHEDOCS_OUTPUT/html/
+        # Build the site from the root directory
+        - npm run build
+        # Copy generated files into Read the Docs directory
+        - mkdir --parents $READTHEDOCS_OUTPUT/html/
+        - cp --recursive build/* $READTHEDOCS_OUTPUT/html/
