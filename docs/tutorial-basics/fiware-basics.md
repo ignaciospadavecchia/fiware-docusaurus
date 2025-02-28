@@ -10,6 +10,16 @@
     *[*] La API de Orion es totalmente compatible con la especificación original NGSIv2 aunque algunas pequeñas diferencias se describen en este [anexo](https://github.com/telefonicaid/fiware-orion/blob/master/doc/manuals/orion-api.md#differences-regarding-the-original-ngsiv2-spec).*
     
 
+    ```jsx title="src/components/HelloDocusaurus.js"
+    function HelloDocusaurus() {
+       // highlight-start
+      return <h1>Hello, Docusaurus!</h1>;
+       // highlight-end
+    }
+    ```
+
+
+
 ## **¿Qué es una API NGSIv2?**
     
     Una **API NGSIv2 (Next Generation Service Interface version 2)** define:
